@@ -6,7 +6,7 @@ import {
   Zap, 
   Thermometer, 
   Battery, 
-  CircleAlert, 
+  AlertCircle, 
   Info, 
   Cpu,
   BrainCircuit,
@@ -34,7 +34,7 @@ const App = () => {
     { id: 'oil', name: 'Oil Pressure', icon: <Droplets className="w-6 h-6" />, color: 'text-red-500' },
     { id: 'battery', name: 'Battery/Alt', icon: <Battery className="w-6 h-6" />, color: 'text-red-500' },
     { id: 'temp', name: 'Coolant Temp', icon: <Thermometer className="w-6 h-6" />, color: 'text-red-500' },
-    { id: 'brake', name: 'Brake System', icon: <CircleAlert className="w-6 h-6" />, color: 'text-red-500' },
+    { id: 'brake', name: 'Brake System', icon: <AlertCircle className="w-6 h-6" />, color: 'text-red-500' },
     { id: 'tire', name: 'Tire Pressure', icon: <AlertTriangle className="w-6 h-6" />, color: 'text-amber-500' },
   ];
 
@@ -241,4 +241,3 @@ const App = () => {
 };
 
 export default App;
-
