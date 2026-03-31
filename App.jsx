@@ -16,7 +16,6 @@ import {
 } from 'lucide-react';
 
 const App = () => {
-  // --- State Management ---
   const [vehicle, setVehicle] = useState({ make: '', model: '', year: '2024' });
   const [symptoms, setSymptoms] = useState('');
   const [selectedLight, setSelectedLight] = useState(null);
@@ -28,7 +27,6 @@ const App = () => {
 
   const COOLDOWN_MS = 30000;
 
-  // --- Warning Light Library ---
   const warningLights = [
     { id: 'engine', name: 'Check Engine', icon: <Cpu className="w-6 h-6" />, color: 'text-amber-500' },
     { id: 'oil', name: 'Oil Pressure', icon: <Droplets className="w-6 h-6" />, color: 'text-red-500' },
@@ -87,12 +85,14 @@ const App = () => {
 
       const data = await response.json();
       
-      if (!response.ok) throw new Error(data.error || 'Server error');
+      if (!response.ok) {
+        throw new Error(data.error || 'Server error');
+      }
       
       setAnalysis(data.text);
       setLastCallTime(Date.now());
     } catch (err) {
-      setError(err.message || "Failed to reach diagnostic server.");
+      setError(err.message);
     } finally {
       setLoading(false);
     }
