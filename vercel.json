@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/diagnose",
+      "destination": "/api/diagnose.js"
+    }
+  ]
+}
